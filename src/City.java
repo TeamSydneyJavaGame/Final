@@ -19,7 +19,7 @@ public class City extends Elements {
 		
 	}
 	 public void draw(Graphics2D g2d) {
-			g2d.drawImage(getPoint(), 550, 480, null);
+			g2d.drawImage(getPoint(), 550, 600, null);
 			
 		
 		}
@@ -38,8 +38,9 @@ public class City extends Elements {
 		for (int i = 0; i < targets.size(); i++) {
 			Target currentTarget = targets.get(i);
 			if (getBounds().intersects(currentTarget.getBounds())) {
-				JOptionPane.showMessageDialog(null, "You failed to stop the submarines. Everyone in the underwater city are dead.");
 				GameFrame.removeTarget(currentTarget);
+				JOptionPane.showMessageDialog(null, "You failed to stop the submarines. Everyone in the underwater city are dead.");
+				
 				System.exit(0);
 				//System.out.println("BOOOOOM!");
 				
@@ -49,7 +50,7 @@ public class City extends Elements {
 	}
 	
 	public Rectangle getBounds() {
-		return new Rectangle(550, 480, getPoint().getWidth(null),
+		return new Rectangle(550, 620, getPoint().getWidth(null),
 				getPoint().getHeight(null));
 	}
 		

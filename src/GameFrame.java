@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
@@ -28,8 +30,8 @@ public class GameFrame extends JPanel implements ActionListener {
 		setFocusable(true);
 
 		
-		background = new Background(800, 600);
-		teamSub = new TeamSub(20, 200);
+		background = new Background(800, 800);
+		teamSub = new TeamSub(20, 300);
 		city = new City(0,0);
 		
 		addKeyListener(new KeyAdapt(teamSub));
@@ -39,7 +41,7 @@ public class GameFrame extends JPanel implements ActionListener {
 	
 		for (int i = 0, z = 0; i < targetCount; i++, z += 80) {
 			addTarget(new Target(random.nextInt(2) + 560 + z,
-					random.nextInt(50) + 1));
+								 random.nextInt(50) + 1));
 		}
 
 	}
@@ -52,6 +54,10 @@ public class GameFrame extends JPanel implements ActionListener {
 		background.draw(g2d);
 		teamSub.draw(g2d);
 		city.draw(g2d);
+		
+		g2d.setColor(Color.green);
+		g2d.setFont(new Font("Verdana", Font.BOLD, 16));
+		g2d.drawString("Enemies killed:" + Missle.getHits().toString(), 10, 30);
 		
 		for (int i = 0; i < targets.size(); i++) {
 			targets.get(i).draw(g2d);
@@ -74,10 +80,8 @@ public class GameFrame extends JPanel implements ActionListener {
 			Missle m = missles.get(i);
 			m.update();
 		}
-
-	    checkEndGame();
 		repaint();
-
+	    checkEndGame();
 	}
 
 	public static void addTarget(Target t) {
@@ -109,7 +113,9 @@ public class GameFrame extends JPanel implements ActionListener {
 	}
 
 	public void checkEndGame() {
+		ArrayList<Target> targets = GameFrame.getTargetsList();
 		if (targets.size() == 0) {
+			
 			JOptionPane.showMessageDialog(null,
 					"You are a hero! You have saved the town!!");
 			System.exit(0);

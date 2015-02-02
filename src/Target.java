@@ -21,7 +21,7 @@ public class Target extends Elements {
 		y += velY;
 
 //		if (y > 600) {
-//			y = 0;
+//			y = 600;
 //		}
 	}
 

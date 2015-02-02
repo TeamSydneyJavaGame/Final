@@ -16,9 +16,12 @@ public class TeamSub extends Elements {
 		x += velX;
 		y += velY;
 		
-//		if (y > 600) {
-//			y = 520;
-//		}
+		if (y > 600) {
+			y = 600;
+		}
+		if (y < 0) {
+			y = 0;
+		}
 	}
 
 	public void draw(Graphics2D g2d) {

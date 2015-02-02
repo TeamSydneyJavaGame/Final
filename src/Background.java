@@ -24,7 +24,5 @@ public class Background extends Elements {
 		ImageIcon ic = new ImageIcon("Ocean.jpg");
 		return ic.getImage();
 	}
-		
-		
 	
 }
