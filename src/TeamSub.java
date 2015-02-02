@@ -36,9 +36,9 @@ public class TeamSub extends Elements {
 		int key = e.getKeyCode();
 
 		if (key == KeyEvent.VK_A) {
-			velY = -4;
+			velY = -5;
 		} else if (key == KeyEvent.VK_Z) {
-			velY = 4;
+			velY = 5;
 		} else if (key == KeyEvent.VK_SPACE) {
 			GameFrame.addMissle(new Missle(x, y));
 			// velX = 10;

@@ -8,7 +8,7 @@ import javax.sound.midi.Receiver;
 import javax.swing.ImageIcon;
 
 public class Missle extends Elements {
-	int velX = 5;
+	int velX = 6;
 
 	public Missle(int x, int y) {
 		super(x, y);
@@ -24,7 +24,6 @@ public class Missle extends Elements {
 
 		g2d.drawImage(getMissleImage(), x + 70, y + 40, null);
 
-		g2d.drawImage(getMissleImage(), x+10, y+20, null);
 
 	}
 
@@ -58,26 +57,3 @@ public class Missle extends Elements {
 	}
 
 }
-
-// public void keyPressed(KeyEvent e) {
-// int key = e.getKeyCode();
-// if (key == KeyEvent.VK_SPACE) {
-// velX = 10;
-// } else if (key == KeyEvent.VK_A) {
-// velY = -4;
-// } else if (key == KeyEvent.VK_Z) {
-// velY = 4;
-// }
-//
-// }
-//
-// public void keyReleased(KeyEvent e) {
-// int key = e.getKeyCode();
-// if (key == KeyEvent.VK_SPACE) {
-// velX = 10;
-// } else if (key == KeyEvent.VK_A) {
-// velY = 0;
-// } else if (key == KeyEvent.VK_Z) {
-// velY = 0;
-// }
-// }
